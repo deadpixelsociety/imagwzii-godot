@@ -5,14 +5,14 @@ var width = 0
 var _dot: Array
 
 
-func render(canvas_item: CanvasItem, position: Vector2, scale: Vector2, color: Color):
-	position.x += width * scale.x
-	
-	for i in range(0, Text.GLYPH_HEIGHT):
-		for t in range(0, Text.GLYPH_WIDTH):
+func render(canvas_item: Node2D, position: Vector2, size: float, color: Color):
+	position.x += width * size
+	for i in range(0, 5):
+		for t in range(0, 5):
 			if _dot[i][t]:
-				var offset = Vector2(t * -scale.x, i * scale.y)
-				var rect = Rect2(position + offset, scale)
+				var offset = Vector2(t * -size, i * size)
+				var pos = (position + offset) - canvas_item.global_position
+				var rect = Rect2(pos, Vector2(size, size))
 				canvas_item.draw_rect(rect, color, true)
 
 

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "MainMenu",
+"language": "GDScript",
+"path": "res://menu/main_menu.gd"
+}, {
 "base": "Reference",
 "class": "TextShape",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://text/text_string.gd"
 } ]
 _global_script_class_icons={
+"MainMenu": "",
 "TextShape": "",
 "TextString": ""
 }
@@ -27,18 +33,21 @@ _global_script_class_icons={
 [application]
 
 config/name="I MAED A GAM3 W1TH Z0MBIES 1N IT!!! 1"
-run/main_scene="res://test.tscn"
+run/main_scene="res://menu/main_menu.tscn"
+boot_splash/bg_color=Color( 0.12549, 0.145098, 0.192157, 1 )
 config/icon="res://icon.png"
 
 [autoload]
 
 Arrays="*res://util/arrays.gd"
 Text="*res://text/text.gd"
+Colors="*res://util/colors.gd"
 
 [display]
 
 window/size/width=1280
 window/size/height=720
+window/stretch/mode="2d"
 
 [physics]
 
@@ -46,4 +55,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

@@ -22,14 +22,16 @@ func get_string(
 	size: float = 1.0,
 	color: Color = Color.white,
 	justify: int = Justify.LEFT,
-	flashing_character: int = -1
+	flashing_text: bool = false,
+	flash_character: int = -1
 ) -> TextString:
 	var ts = TextString.new()
 	ts.position = position
-	ts.scale = Vector2(size, size)
+	ts.size = size
 	ts.modulate = color
 	ts.justify = justify
-	ts.flash_character = flashing_character
+	ts.flash_character = flash_character
+	ts.flashing_text = flashing_text
 	ts.text = text
 	return ts
 
@@ -43,7 +45,7 @@ func get_score(
 ) -> TextString:
 	var ts = TextString.new()
 	ts.position = position
-	ts.scale = Vector2(size, size)
+	ts.size = size
 	ts.modulate = color
 	ts.justify = justify
 
